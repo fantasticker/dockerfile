@@ -13,7 +13,7 @@ services:
         ports:
             - "9000:9000"
         volumes:
-            - ./test-laravel:/var/www/app
+            - ./:/var/www/app
         networks:
             - laravel
 
@@ -38,7 +38,7 @@ services:
         volumes:
             -   ./docker/mysql:/var/lib/mysql
         environment:
-            MYSQL_DATABASE: laravel
+            MYSQL_DATABASE: laravel_docker
             MYSQL_USER: user
             MYSQL_PASSWORD: user
             MYSQL_ROOT_PASSWORD: root
