@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  laravel: bridge
+
+services:
+  php:
+    container_name: php
+    build:
+      dockerfile: dockerfile
+      context: .
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./test-laravel:/var/www/app
+    networks:
+      - laravel
+  
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./test-laravel:/var/www/app
+      - 
