@@ -18,7 +18,7 @@ RUN docker-php-ext-install pdo pdo_mysql tokenizer xml curl bcmath json zip
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 #Copy project laravel ke image
-COPY ./test-larvel var/www/app
+COPY ./ var/www/app
 
 #Set working directory
 WORKDIR /var/www/app
